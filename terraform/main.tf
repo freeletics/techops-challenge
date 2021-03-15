@@ -1,8 +1,7 @@
 resource "null_resource" "minikube_healthcheck" {
   provisioner "local-exec" {
     command = <<EOF
-    until nc -z 192.168.50.4 443; do
-    # until nc -z $(minikube ip) 8443; do
+    until nc -z $(minikube ip) 8443; do
       echo 'Trying again in 10 sec'
       sleep 10
     done
@@ -60,6 +59,16 @@ resource "helm_release" "jenkins" {
                   )
                 }
               ]
+            })
+            # Iterate and render the credentials loaded via locals.tf
+            credentials = yamlencode({
+              credentials = {
+                system = {
+                  domainCredentials = [{
+                    credentials = local.credentials
+                  }]
+                }
+              }
             })
 
             # Jenkins folders for a better organization in Jenkins Web UI
