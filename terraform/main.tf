@@ -133,3 +133,8 @@ resource "helm_release" "jenkins" {
 
   depends_on = [null_resource.minikube_healthcheck]
 }
+
+module "kubedoom" {
+  source = "../modules/kubedoom"
+  count  = local.environment_file.secretStuff.kubedoom
+}

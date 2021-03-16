@@ -44,13 +44,16 @@
 			}
 		]
 	},
+	"secretStuff": {
+		"kubedoom": 1
+	},
 	"sops": {
 		"kms": null,
 		"gcp_kms": null,
 		"azure_kv": null,
 		"hc_vault": null,
-		"lastmodified": "2021-03-14T21:07:38Z",
-		"mac": "ENC[AES256_GCM,data:EhVAhdT/I9MyT1KQIGbGjOtCGGTLTUACT6haYd9sicUZxtzfMeOV8v/Mo+IUEy4AJvHRijOvgRmJtbx7EL8fgd0IwT6XF1IyGdLTxYFw88ksfr4hi4UdYBygxvVVcQktHxRrn0XRDvXEUJ/8JW9qsfTAjpxoPg9d8smIQnRfXCA=,iv:3gjN5/fDWynLsw2i/lmLxnR1LHPWwN+KWk8lXhRs2PM=,tag:QlwmEfTSgfWaNCPXpj5x3g==,type:str]",
+		"lastmodified": "2021-03-15T21:26:43Z",
+		"mac": "ENC[AES256_GCM,data:w3yHEwsFJIbqmojXFYZhlBhVGYPgMDA7DtvzwxhHRzpXkGTxMciU3bpi+U93PI93IeMks/oKtpwbozvLUtN5ssMI/d3Gs2GWbZij6SgvC1fGLbcxRg2tAZaZOEh81wSbHpQu8LuvNduRgXYX272h3eTxKh4D3ikoiCav53enEbI=,iv:a+s9DQ07wt6XIA74+oj1I57b6teS1jzwl4n5yLetLVc=,tag:xZhuACoExoCP1y6GEVEFOg==,type:str]",
 		"pgp": [
 			{
 				"created_at": "2021-03-14T19:49:58Z",
