@@ -20,6 +20,6 @@ bin/
 # Decrypted Secrets
 *.dec
 **/secrets.dec.json
-**/envrionment.dec.json
+**/environment.dec.json
 
 kubeconfig
