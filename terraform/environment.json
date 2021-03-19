@@ -45,7 +45,7 @@
 		]
 	},
 	"secretStuff": {
-		"kubedoom": 1
+		"kubedoom": 0
 	},
 	"sops": {
 		"kms": null,

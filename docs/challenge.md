@@ -13,9 +13,65 @@ Prerequisites to work with this repo:
 + [minikube](https://minikube.sigs.k8s.io/docs/start/)
 + [terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
+Regarding **challenge 3a** and **challenge 3b** we do expect you only to address one of the challenges. If you like to do both? No problem.
+
 ## CHALLENGE 0
 
-Goal: Make Kubedoom work on Minikube with a single `terraform apply`.
+**Goal: Setup all prerequisites.**
+
+Setup all prerequisites according the docs or your personal idea on your system.
+
+If you like to use a different kubernetes flavor for you local machine like kind or microk8s
+feel free to do so and adopt the code provided accordingly.
+
+## CHALLENGE 1
+
+**Goal: Access the Jenkins**
+
+The code is capable of deploying a jenkins with some configurations via the [CASC Plugin .](https://github.com/jenkinsci/configuration-as-code-plugin)
+But its not accessible from your local machine.
+
+**What do we expect to see?**
+
+A description how to access the jenkins and were to retrieve the credentials to login.
+As a bonus we would like to see a way how to permanently make the jenkins accessible.
+
+## CHALLENGE 2
+
+**Goal: Cipher all credentials**
+
+Inside the [environment.json](../terraform/environment.json) file there are some values encrypted and some are not.
+
+```json
+			{
+				"string": {
+					"id": "first_string_secret",
+					"description": "Demo Secret",
+					"scope": "GLOBAL",
+					"secret": "t0ps3cr3t"
+				}
+			},
+			{
+				"usernamePassword": {
+					"id": "ENC[AES256_GCM,data:pQtecC5A7wVZFjn6Nurmlf0W9tJP,iv:BMEkYyRJJDTTynrAF3r94g2SFIAR2aBFqIDkoi+Zge8=,tag:PM45tYLtRYmXneB0LXnjFQ==,type:str]",
+					"description": "ENC[AES256_GCM,data:pG0Dx7Pr7NLZbpQ=,iv:Csm/O4hQu07CNb4ufP2BVYb2ZbpSlniMSN283lkGTXw=,tag:VH2phlp56KDHWECGib1IjQ==,type:str]",
+					"password": "ENC[AES256_GCM,data:giyM,iv:aod+gvsXaZh1OiF4FDImeSaeBhHIY4IQPTY/IT4o10U=,tag:M8Zqs2V0qNdngP8/s6EatA==,type:str]",
+					"scope": "ENC[AES256_GCM,data:vAeamqRe,iv:wbSHMdNKKdt6p/qbB0YLSzJvmadlOQt8fseNFGE+JSo=,tag:eUXJRi3AAICU2pSNttkIFw==,type:str]",
+					"username": "ENC[AES256_GCM,data:phps,iv:xGj1qRn2c/Uct9gWzGQDUJKRZCCMg92ZOD4rIsSQ0tY=,tag:APcgSAQ9W7dhpog7SP17Tw==,type:str]"
+				}
+			}
+```
+
+**What do we expect to see?**
+
+Please search for the issue why its only partially encrypted and fix the root cause.
+As a bonus please explain why the second item was already encrypted.
+
+
+
+## CHALLENGE 3a
+
+**Goal: Make Kubedoom work on Minikube with a single `terraform apply`.**
 
 Kubedoom as-is won't come up due to a limitation, it will display "Running" for
 some time before crashing. To solve that you have to identify, fix and integrate
@@ -30,9 +86,9 @@ An implementation that allows rolling-upgrades of Kubedoom and works
 out-of-the-box. A nice-to-have would be a Helm Chart with the required
 specs to deploy a working Kubedoom release.
 
-## CHALLENGE 1
+## CHALLENGE 3b
 
-Goal: Implement a Jenkins Pipeline for Kubedoom to perform CI/CD on Minikube
+**Goal: Implement a Jenkins Pipeline for Kubedoom to perform CI/CD on Minikube**
 
 Inside the Terraform folder you will find a Jenkins setup including encrypted
 secrets [(instructions available here)](docs/env-preparation.md), the Jenkins
