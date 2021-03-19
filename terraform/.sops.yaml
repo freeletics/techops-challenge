@@ -1,0 +1,7 @@
+---
+
+creation_rules:
+  - path_regex: .*\.json$
+    encrypted_regex: '^(user.*|pass.*|secret.*|.*[Bb]earer.*|.*[Kk]ey|.*[Kk]eys|salt|sentry.*|.*[Tt]oken)$'
+    pgp: >-
+        BCD0654D6FA4AB48E40CDE7F1C854CC81B4C2229
