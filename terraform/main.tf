@@ -99,20 +99,20 @@ resource "helm_release" "jenkins" {
           "basic-branch-build-strategies:1.3.2",
           "build-timestamp:1.0.3",
           "command-launcher:1.5",
-          "configuration-as-code:1.47",
-          "credentials-binding:1.24",
+          "configuration-as-code:1.51",
+          "credentials-binding:1.27",
           "git:4.6.0",
           "jdk-tool:1.5",
           "job-dsl:1.77",
           "kubernetes-cli:1.10.0",
           "kubernetes:1.29.2",
           "pipeline-utility-steps:2.6.1",
-          "plugin-util-api:2.0.0",
+          "plugin-util-api:2.4.0",
           "role-strategy:3.1", # Role-based Access Strategy (RBAC)
           "startup-trigger-plugin:2.9.3",
           "workflow-aggregator:2.6",
-          "workflow-cps:2.90",
-          "workflow-job:2.40",
+          "workflow-cps:2.93",
+          "workflow-job:2.41",
         ]
 
         resources = {
